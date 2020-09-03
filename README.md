@@ -1,5 +1,5 @@
 # Google Search Email Scraper
-A short python 3 script that finds emails on pages of google search results
+A short python 3 script that finds emails on pages of google search results and returns them in a .csv file
 
 ### Installing Dependencies
 * pip3 install -r requirements.txt
