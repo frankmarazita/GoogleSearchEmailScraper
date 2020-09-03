@@ -35,6 +35,10 @@ with open('output.csv', mode='w', newline='') as file_output:
                             if ENABLE_CONSOLE: print("Timeout")
                         emails = re.findall(
                             r'([\d\w\.]+@[\d\w\.\-]+\.\w+)', data.text)
+                        emails_no_at = re.findall(
+                            r'([\d\w\.]+%40[\d\w\.\-]+\.\w+)', data.text)
+                        for other in emails_no_at:
+                            emails.append(other.replace("%40", "@"))
                         # I no emails are found, skip
                         if len(emails) > 0:
                             file_writer.writerow([domain])
